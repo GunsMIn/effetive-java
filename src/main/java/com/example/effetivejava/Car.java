@@ -1,5 +1,8 @@
 package com.example.effetivejava;
 
+import lombok.ToString;
+
+@ToString
 public class Car {
     private  String name;
     private  int oil;
@@ -18,17 +21,14 @@ public class Car {
         return new Car(name, 0);
     }
 
+    public static void main(String[] args) {
 
-    /**
-     * 정적 펙토리 메서드 도입전 생성자
-     * */
-//    public Car(String name, int oil) {
-//        this.name = name;
-//        this.oil = oil;
-//    }
-//
-//    public Car(String name){
-//        this.name = name;
-//        this.oil = 0;
-//    }
+        Car 벤츠 = new Car("벤츠", 10);
+        Car lambo = Car.createCar("람보르기니", 100000);
+        Car tico = Car.createNoOilCar("티코");
+        System.out.println("lambo = " + lambo);
+        System.out.println("tico = " + tico);
+        System.out.println("벤츠 = " + 벤츠);
+    }
+
 }
